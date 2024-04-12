@@ -1,4 +1,4 @@
-#include "Shader.h"
+#include "Shader.hpp"
 
 #pragma region Constructors
 shader::shader(const char* vertexPath, const char* fragmentPath)
