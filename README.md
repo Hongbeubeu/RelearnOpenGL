@@ -10,3 +10,4 @@
     # Draw Triangle VBO, VAO, EBO
   # Shaders
     # Draw rainbow Triangle
+    # Split shader into file shader
