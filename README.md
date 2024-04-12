@@ -6,3 +6,7 @@
   
   # Hello Window
     # Draw blank window
+  # Hello Triangle
+    # Draw Triangle VBO, VAO, EBO
+  # Shaders
+    # Draw rainbow Triangle
