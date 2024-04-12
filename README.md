@@ -4,3 +4,5 @@
     # Build GLFW lib
     # Glad
   
+  # Hello Window
+    #Draw blank window
