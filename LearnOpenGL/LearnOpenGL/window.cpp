@@ -4,6 +4,9 @@
 #include <shader.hpp>
 #include <iostream>
 #include <stb_image.h>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
@@ -20,6 +23,20 @@ unsigned int shaderProgram;
 
 int main()
 {
+#pragma region GLM_TEST
+	/*glm::vec4 vec(1.0f, 0.0f, 0.0f, 1.0f);
+	glm::mat4 trans = glm::mat4(1.0f);
+	trans = glm::translate(trans, glm::vec3(1.0f, 1.0f, 0.0f));
+	trans = glm::rotate(trans, glm::radians(90.0f), glm::vec3(0.0, 0.0, 1.0));
+	trans = glm::scale(trans, glm::vec3(0.5, 0.5, 0.5));
+	vec = trans * vec;
+	std::cout << vec.x << " " << vec.y << " " << vec.z << std::endl;*/
+
+
+#pragma endregion
+
+
+
 #pragma region Initialize
 	// glfw: initialize and configure
 	// ------------------------------
@@ -153,6 +170,7 @@ int main()
 	// or set it via the texture class
 	ourShader.setInt("texture2", 1);
 
+
 #pragma endregion
 
 	// render loop
@@ -172,9 +190,19 @@ int main()
 		glActiveTexture(GL_TEXTURE1);
 		glBindTexture(GL_TEXTURE_2D, texture2);
 
+#pragma region Translation
+		glm::mat4 trans = glm::mat4(1.0f);
+		trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
+		trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.0, 0.0, 1.0));
+#pragma endregion
 		// now render the triangle
 		ourShader.use();
+		unsigned int transformLoc = glGetUniformLocation(ourShader.ID, "transform");
+		glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
 		glBindVertexArray(VAO);
+
+
+
 		//glDrawArrays(GL_TRIANGLES, 0, 3);
 		//glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);

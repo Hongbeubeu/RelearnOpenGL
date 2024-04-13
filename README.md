@@ -16,3 +16,7 @@
 	# Draw texture
     # Load multiple textures
     # Draw multiple textures
+  # Transformations
+    # Translate
+	# Rotate
+	# Scale
