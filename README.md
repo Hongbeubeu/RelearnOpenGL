@@ -11,3 +11,8 @@
   # Shaders
     # Draw rainbow Triangle
     # Split shader into file shader
+  # Textures
+    # Load texture
+	# Draw texture
+    # Load multiple textures
+    # Draw multiple textures
