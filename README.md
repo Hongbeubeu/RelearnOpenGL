@@ -27,3 +27,6 @@
     # Move camera
     # Zoom camera
     # Split camera into class
+# Lighting
+  # Colors
+    # Lighting scene
