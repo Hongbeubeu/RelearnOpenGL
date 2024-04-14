@@ -30,3 +30,8 @@
 # Lighting
   # Colors
     # Lighting scene
+  # Basic Lighting
+    # Ambient lighting
+	# Diffuse lighting
+	# Specular lighting
+    # Phong lighting vs Gouraud lighting
