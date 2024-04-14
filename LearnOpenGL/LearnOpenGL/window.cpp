@@ -31,6 +31,7 @@ float lastFrame = 0.0f;
 
 // lighting
 glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
+float test = 0;
 
 int main()
 {
@@ -154,12 +155,14 @@ int main()
 
 	// load textures (we now use a utility function to keep the code more organized)
 	// -----------------------------------------------------------------------------
-	unsigned int diffuseMap = loadTexture("container2.png"); 
+	unsigned int diffuseMap = loadTexture("container2.png");
+	unsigned int specularMap = loadTexture("container2_specular.png");
 
 	// shader configuration
 	// --------------------
 	lightingShader.use();
 	lightingShader.setInt("material.diffuse", 0);
+	lightCubeShader.setInt("material.specular", 1);
 
 #pragma endregion
 
@@ -204,7 +207,7 @@ int main()
 		lightingShader.setVec3("light.specular", 1.0f, 1.0f, 1.0f);
 
 		// material properties
-		lightingShader.setVec3("material.specular", 0.5f, 0.5f, 0.5f); // specular lighting doesn't have full effect on this object's material
+		lightingShader.setInt("material.specular", 1); // specular lighting doesn't have full effect on this object's material
 		lightingShader.setFloat("material.shininess", 64.0f);
 
 		// view/projection transformations
@@ -220,6 +223,9 @@ int main()
 		// bind diffuse map
 		glActiveTexture(GL_TEXTURE0);
 		glBindTexture(GL_TEXTURE_2D, diffuseMap);
+		// bind specular map
+		glActiveTexture(GL_TEXTURE1);
+		glBindTexture(GL_TEXTURE_2D, specularMap);
 
 		// render the cube
 		glBindVertexArray(cubeVAO);
