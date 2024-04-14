@@ -35,3 +35,5 @@
 	# Diffuse lighting
 	# Specular lighting
     # Phong lighting vs Gouraud lighting
+  # Materials
+    # Lighting scene with materials
