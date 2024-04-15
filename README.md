@@ -39,3 +39,8 @@
     # Lighting scene with materials
   # Lighting Maps
     # Diffuse map
+    # Specular map
+  # Light Casters
+    # Directional light
+    # Point light
+    # Spot light
