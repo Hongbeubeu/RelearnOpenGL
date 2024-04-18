@@ -20,7 +20,7 @@ Camera::Camera(float posX, float posY, float posZ, float upX, float upY, float u
 }
 
 // returns the view matrix calculated using Euler Angles and the LookAt Matrix
-glm::mat4 Camera::GetViewMatrix()
+glm::mat4 Camera::GetViewMatrix() const
 {
     return glm::lookAt(Position, Position + Front, Up);
 }
@@ -40,13 +40,13 @@ void Camera::ProcessKeyboard(Camera_Movement direction, float deltaTime)
 }
 
 // processes input received from a mouse input system. Expects the offset value in both the x and y direction.
-void Camera::ProcessMouseMovement(float xoffset, float yoffset, GLboolean constrainPitch)
+void Camera::ProcessMouseMovement(float xOffset, float yOffset, GLboolean constrainPitch)
 {
-    xoffset *= MouseSensitivity;
-    yoffset *= MouseSensitivity;
+    xOffset *= MouseSensitivity;
+    yOffset *= MouseSensitivity;
 
-    Yaw += xoffset;
-    Pitch += yoffset;
+    Yaw += xOffset;
+    Pitch += yOffset;
 
     // make sure that when pitch is out of bounds, screen doesn't get flipped
     if (constrainPitch)
@@ -62,9 +62,9 @@ void Camera::ProcessMouseMovement(float xoffset, float yoffset, GLboolean constr
 }
 
 // processes input received from a mouse scroll-wheel event. Only requires input on the vertical wheel-axis
-void Camera::ProcessMouseScroll(float yoffset)
+void Camera::ProcessMouseScroll(float yOffset)
 {
-    Zoom -= (float)yoffset;
+    Zoom -= (float)yOffset;
     if (Zoom < 1.0f)
         Zoom = 1.0f;
     if (Zoom > 45.0f)

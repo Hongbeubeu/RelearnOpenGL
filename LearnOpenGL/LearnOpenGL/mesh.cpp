@@ -4,10 +4,12 @@
 
 #include "mesh.hpp"
 
+#include <utility>
+
 Mesh::Mesh(vector<Vertex> vertices, vector<unsigned int> indices, vector<Texture> textures) {
-    this->vertices = vertices;
-    this->indices = indices;
-    this->textures = textures;
+    this->vertices = std::move(vertices);
+    this->indices = std::move(indices);
+    this->textures = std::move(textures);
 
     // now that we have all the required data, set the vertex buffers and its attribute pointers.
     setupMesh();
@@ -41,7 +43,7 @@ void Mesh::Draw(shader &shader) {
     }
     // draw mesh
     glBindVertexArray(VAO);
-    glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);
+    glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, nullptr);
     glBindVertexArray(0);
     
     // always good practice to set everything back to defaults once configured.
