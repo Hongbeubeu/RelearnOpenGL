@@ -23,7 +23,8 @@ find_package(OpenGL REQUIRED)
 add_executable(LearnOpenGL window.cpp glad.c shader.cpp stb_image.cpp camera.cpp
         mesh.cpp
         mesh.hpp
-        model.h
+        model.hpp
+        model.cpp
 )
 target_link_libraries(LearnOpenGL OpenGL::GL)
 target_link_libraries(LearnOpenGL glfw)

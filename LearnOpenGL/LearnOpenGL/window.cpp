@@ -7,7 +7,7 @@
 
 #include <shader.hpp>
 #include <camera.hpp>
-#include <model.h>
+#include <model.hpp>
 
 #include <iostream>
 
@@ -81,7 +81,7 @@ int main()
 
     // load models
     // -----------
-    Model ourModel("backpack/backpack.obj");
+    Model ourModel("backpack/backpack.obj" , false);
 
 
     // draw in wireframe
