@@ -20,9 +20,6 @@ add_subdirectory(glfw-3.4)
 add_subdirectory(assimp)
 include_directories(.)
 include_directories(include)
-include_directories(assimp/include)
-include_directories(backpack)
-include_directories(textures)
 
 find_package(OpenGL REQUIRED)
 

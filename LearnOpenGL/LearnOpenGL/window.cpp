@@ -78,7 +78,7 @@ int main() {
     glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LESS);
 
-    Shader shader("Shader.vs", "Shader.fs");
+    Shader shader("shaders/Shader.vs", "shaders/Shader.fs");
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
