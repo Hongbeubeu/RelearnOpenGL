@@ -134,7 +134,7 @@
   <ItemGroup>
     <ClCompile Include="camera.cpp" />
     <ClCompile Include="glad.c" />
-    <ClCompile Include="shader.cpp" />
+    <ClCompile Include="Shader.cpp" />
     <ClCompile Include="stb_image.cpp" />
     <ClCompile Include="window.cpp" />
   </ItemGroup>
@@ -142,12 +142,12 @@
     <None Include="..\..\README.md" />
     <None Include="light_cube.fs" />
     <None Include="light_cube.vs" />
-    <None Include="shader.fs" />
-    <None Include="shader.vs" />
+    <None Include="Shader.fs" />
+    <None Include="Shader.vs" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="camera.hpp" />
-    <ClInclude Include="shader.hpp" />
+    <ClInclude Include="Shader.hpp" />
     <ClInclude Include="stb_image.h" />
   </ItemGroup>
   <ItemGroup>

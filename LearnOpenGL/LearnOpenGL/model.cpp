@@ -8,7 +8,7 @@ Model::Model(string const &path, bool gamma = false) : gammaCorrection(gamma) {
     loadModel(path);
 }
 
-void Model::Draw(shader &shader) {
+void Model::Draw(Shader &shader) {
     for (auto &mesh: meshes) {
         mesh.Draw(shader);
     }

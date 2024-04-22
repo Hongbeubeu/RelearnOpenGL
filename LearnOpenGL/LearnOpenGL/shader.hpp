@@ -8,16 +8,16 @@
 #include <iostream>
 #include <glm/glm.hpp>
 
-class shader
+class Shader
 {
 public:
 	// the program ID
 	unsigned int ID;
 
-	// constructor reads and builds the shader
-	shader(const char* vertexPath, const char* fragmentPath);
-	// use/activate the shader
-    // activate the shader
+	// constructor reads and builds the Shader
+	Shader(const char* vertexPath, const char* fragmentPath);
+	// use/activate the Shader
+    // activate the Shader
     // ------------------------------------------------------------------------
     void use() const;
     // utility uniform functions

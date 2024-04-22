@@ -22,6 +22,7 @@ include_directories(.)
 include_directories(include)
 include_directories(assimp/include)
 include_directories(backpack)
+include_directories(textures)
 
 find_package(OpenGL REQUIRED)
 

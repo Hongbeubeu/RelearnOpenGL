@@ -52,7 +52,7 @@ public:
     // constructor
     Mesh(vector<Vertex> vertices, vector<unsigned int> indices, vector<Texture> textures);
     // render the mesh
-    void Draw(shader &shader);
+    void Draw(Shader &shader);
 private:
     // render data
     unsigned int VBO{}, EBO{};
