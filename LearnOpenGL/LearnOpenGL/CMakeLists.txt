@@ -20,9 +20,10 @@ add_subdirectory(glfw-3.4)
 add_subdirectory(assimp)
 include_directories(.)
 include_directories(include)
+include_directories(${CMAKE_CURRENT_BINARY_DIR}/configuration)
 
 find_package(OpenGL REQUIRED)
-
+configure_file(configuration/root_directory.h.in configuration/root_directory.h)
 add_executable(LearnOpenGL window.cpp glad.c shader.cpp stb_image.cpp camera.cpp
         mesh.cpp
         mesh.hpp

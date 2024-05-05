@@ -11,6 +11,7 @@
 #include <model.hpp>
 
 #include <iostream>
+#include <filesystem.h>
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
@@ -181,9 +182,9 @@ int main()
 
     // load textures
     // -------------
-    unsigned int cubeTexture = loadTexture("textures/container.jpg");
-    unsigned int floorTexture = loadTexture("textures/metal.png");
-
+    unsigned int cubeTexture = loadTexture(FileSystem::getPath("textures/container.jpg").c_str());
+    unsigned int floorTexture = loadTexture(FileSystem::getPath("textures/metal.png").c_str());
+    
     // shader configuration
     // --------------------
     shader.use();
